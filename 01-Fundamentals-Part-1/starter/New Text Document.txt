@@ -1,0 +1,35 @@
+/////////////VARIABLES
+Varible name convention
+-lowerCamelCase
+-dont use upper case at first but in oop we can use so better not to use it.
+-PI-- all upper case as it is constant dont change
+-variable should  be readable
+
+rules
+-cannot use new, function as they are reserved keyword in javascript
+-cannot follow a numeric literal.i.e-let 3years = 3;
+-variable can only contain numbers ,letters ,dollar sign ,underscor.
+-we can use name but this is also reserved keyword so better not to use name.
+
+//////////DATA TYPE
+7 PRIMTIVE DATATYPE
+-numbers - floating points numbers ,(used for decimals and int).--int or deci nai in javascript
+-string - sequence of characters , used for text! USE ''/"" FOR THIS OR ELSE JavaScript will get confused.
+-boolean-logical type true or false
+-undefined- Value taken by a variable hat is not yet defined(empty value) 
+-null- empty 
+-symbol- ES2015 value that is unique and cannot be changed (not useful)
+-bigIntn- larger integer than Numbr type can hold.
+JavaScript has dymanic typing -DATA TYPE of the value stored in a variable is determined automatically.
+
+//--comment
+let and var are for not constantvariable
+const is for const variable
+we dont need to decare a variable we can just right name1 =dfv;
+but this is terrible because this declared in global Varible;
+
+
+
+
+
+
