@@ -1,0 +1,91 @@
+So destructuring is an ESX feature
+and it's basically a way of unpacking values
+from an array or an object into separate variables.
+
+So in other words destructuring
+is to break a complex data structure down
+into a smaller data structure like a variable.
+
+So for arrays we use destructuring
+to retrieve elements from the array
+and store them into variables in a very easy way.
+
+
+So let's just actually start with a very simple array.
+
+const arr = [2,3,4];
+
+if we wanted to retrieve each one
+into its own variable without destructuring,
+we would do it like this.
+
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+// destructuring mane kind of unpacking it
+// destructuring assignment- amra destructure korbo const [x,y,z]
+ekshathe likhbo x y z
+const likhte hobe eikhane
+
+const [x,y,z] = arr;
+console.log(x,y,z);
+The original array is of course not affected
+
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+let [first, second] = restaurant.categories;- eikhane first ta hocche first hobe and second mane 2nd elements
+let [first, , second] = restaurant.categories;eikhane first ta hocche first hobe and second mane 3rd elements 
+console.log(first, )
+because , ,  diye second element ta khali rakhsi mane amra second ta chacchina.
+
+if we were to like to switch these two variables,
+then without destructuring
+const temp = main;
+main = secondary;
+secondary = temp;
+
+We could not just do main equal secondary
+and then secondary equals main
+because by then we would already have overwritten
+the main variable
+
+With destructuring
+[main, secondary ] = [secondary , main];
+
+//receive two return values from a function.
+ageh funtion create korte hobe inside that object
+
+order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+
+///////////nested destruction//
+const nested = [2, 4, [5, 6]];
+//destructuring inside of destructuring
+//const [i, , j] = nested;
+
+//console.log(i, j);
+//we get the number two and then the array five and six.
+//we need to do destructuring inside of destructuring shown below
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+/////////// we can also set default values the variables when we are extracting them./////////////
+const [p , q ] = [8, 9];
+
+//////////////////////////////////////
+// Destructuring Objects
+-since in an object, the order of elements does not matter, 
+we don't need to manually skip elements like we did in an array.
+-So to destructure objects we use the curly braces.
+
+
+
+
+
+

@@ -28,6 +28,9 @@ JavaScript has dymanic typing means, when you create a new variable,
 you do not have to manually define the data type
 of the value that it contains.
 
+//whenever we get something from the user interface, for example, from an input field, 
+it usually always is a string.
+
 -DATA TYPE of the value stored in a variable is determined automatically.
 
 -another important application of dynamic typing

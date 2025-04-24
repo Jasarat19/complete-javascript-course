@@ -1,0 +1,83 @@
+'use strict';
+whenever we use query selector
+with a selector, which actually matches multiple elements,
+only the first one will get selected.
+- we need query selectorAll which returns a 
+ NodeList, it is a little bit like an array.
+-It's not exactly like an array.
+it works as though it was an array 
+- access korte hoile loop use korbo . 
+-if there is only one line of code
+that I want to execute in for loop, I actually don't have
+to create this block -{}
+-if you want to use the same function
+in multiple event listeners,
+then you need to specify that function
+as a separate function
+And then you can pass that function
+as an argument to multiple "add event listener" methods, 
+function name diye call kora lagbena.
+
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelectorAll('.show-modal');
+// we take that selected element from variable
+and on there we can read the class list property. 
+So class list property itself 
+has a couple of methods, like remove 
+And we can actually also remove multiple classes with commas,
+//Just keep in mind that we do not use the dot here. .remove('hidden') but not ('.hidden')
+//Imagine that the hidden class actually had 10 properties. taile toh style.display aro onek
+bhejal hoito so amra whole class manupulate korsi
+- usually when you need to manipulate styles on a page,
+then always just export the styles into a class,
+and then use the class 
+-classes allows to aggregate multiple CSS properties in just one
+in order to change the appearance of elements on our page.
+
+
+
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+for (let i = 0; i < btnsOpenModal.length; i++)
+  btnsOpenModal[i].addEventListener('click', openModal);
+
+btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+///we are basically listening for events everywhere document.addEventListener
+//there are actually three types of events for the keyboard.
+There is the key down , the key press or the key up.
+-key up, happens when we lift our finger
+off the keyboard basically Or off the key.
+Key press is fired continuously
+as we keep our finger on a certain key
+and key down is fired as soon as we just press down the key.
+- as I hit any key here on the keyboard,
+a key down event is generated
+and our handler function is waiting for that event to happen.
+-the information about which key was pressed will be stored
+in the event 
+-if an event like this occurs
+JavaScript generate an object.
+And that object contains all the information
+about the event itself,we can then actually access that
+object in the event handler function
+-contains - check korte if it contains the class
+
+document.addEventListener('keydown', function (e) {
+  // console.log(e.key);
+
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
