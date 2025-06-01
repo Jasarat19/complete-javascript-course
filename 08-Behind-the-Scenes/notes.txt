@@ -422,12 +422,81 @@ jonas.calcAge();
 this- undefined (that is only valid for strict mode)
 
 3. Arrow functions 
-this =
+this = THIS OF surrounding function ( LEXICAL THIS)
+
+It's really important not to forget that arrow functions do not get their own 'this keyword.
+-we have arrow functions and while arrow functions are not exactly a way of calling functions.
+It's an important kind of function that we need to consider,
+because, remember, arrow functions do not get their own 'this keyword'.
+Instead, if you use 'the this variable'
+in an arrow function, it will simply be the this keyword of the surrounding function.
+So of the parent function and in technical terms,this is called the 'lexical this keyword,
+'because it simply gets picked up from the outer lexical scope of the arrow function.
+So never ever forget this very important property of arrow functions.
+
+4.Event listener-
+this = DOM element that the heandler is attached to
+
+finally, if a function is called as an event listener,
+then the this keyword will always point to the DOM element
+that the handler function is attached to.
+
+//there are actually other ways in which we can call a function, for example, 
+using the new keyword or the call apply and bind methods,
+
+//////It's also important to know what the, this keyword is not.//////
+ 1. this will never point to the function in which we are using it.
+
+2. the this keyword will never point to the variable environment of the function.
+
+///////////////////////////////////////
+// The this Keyword in Practice
+console.log(this); - this keyword in the global scope is simply the window object. 
+
+1. Simple function call
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);-- inside this regular function(without the function being attached to any object) call this keyword will be undefined  as we are in strict mode.
+  otherwise w/o strict mode in sloppy mode, it would be also the global object -window object.
+};
+calcAge(1991);
+
+2. Arrow functions
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);-- the arrow function does not get its own this keyword.So instead the arrow function simply uses the 
+  lexical this keyword, which means that it uses the this keyword of its parent function or of its parents scope.
+  So in this case, this, this keyword here will simply point to the disc keyword in the global scope.
+ And so therefore it will point to window
+};
+calcAgeArrow(1980);
+
+3. METHOD
+const jonas = {
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+jonas.calcAge();
+
+//The reason that the this keyword will point to Jonas in this case is
+because Jonas was the object calling that method and that's a subtle, but very important difference
+// this keyword always points to the object that is calling the method
 
 
+const matilda = {
+  year: 2017,
+};
 
+matilda.calcAge = jonas.calcAge;// method borrowing
+matilda.calcAge(); matilla er answer ansbe not jonas
 
-
+const f = jonas.calcAge;
+f();--undfined
+this happens because this f function here is now just a regular function call
+eikhane kono obj call kortesena func ke
 
 
 
